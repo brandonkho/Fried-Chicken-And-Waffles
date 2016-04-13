@@ -6,9 +6,9 @@ from .models import User
 import requests
 
 @app.route('/')
-def main_page():
+def home():
     
-    return render_template("main_page.html")
+    return render_template("home.html")
 
 @app.route('/')
 @app.route('/index')
@@ -76,7 +76,7 @@ def before_request():
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return redirect(url_for('home'))
 
 
 
@@ -106,18 +106,23 @@ def send():
     dropoff_city = 'Berkeley'
     dropoff_state = 'CA'
     dropoff_name = 'The White House'
-    '''
-    dropoff_string = '?dropoff_name=' + dropoff_name + '?dropoff_address=' + dropoff_address +dropoff_city + dropoff_state 
-    delivery_url = postmates_url + 'customer_id' + '/deliveries' + '?pickup_name=' + name + '?pickup_address=' + address + city + state /
-    + dropoff_string + '?manifest=' item + postmates_key
-    '''
+    
     delivery_url = postmates_url + customer_id + '/deliveries'
     
     data = {'pickup_name': name, 'pickup_address': address+city+', '+state, 'pickup_phone_number': phone,
     'dropoff_name': dropoff_name, 'dropoff_address': dropoff_address+dropoff_city+', '+dropoff_state, 'dropoff_phone_number': dropoff_phone, 'manifest':item}
 
     r = requests.post(delivery_url, data=data, auth=(postmates_key, ''))
+
     
+    print(r)
 
+    return 'fuck you'
 
-    return render_template('order.html')
+@app.route('/menu')
+def menu():
+    return render_template('menu.html')
+
+def calculate(item, quantity):
+    pass
+

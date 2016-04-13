@@ -1,16 +1,12 @@
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
-    {% if title %}
-    <title>{{ title }} - microblog</title>
-    {% else %}
-    <title>microblog</title>
-    {% endif %}
-  </head>
-  <body>
-
-    <nav class="navbar navbar-inverse navbar-static-top">
+    
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-static-top">
     <div class="container-fluid">
       <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -45,19 +41,11 @@
 
     </div>
   </nav>
-    <hr>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    <ul>
-    {% for message in messages %}
-        <li>{{ message }} </li>
-    {% endfor %}
-    </ul>
-    {% endif %}
-    {% for post in posts %}
-    <div><p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
-    {% endwith %}
-    {% block content %}{% endblock %}
-  </body>
+        
+  <header>
+    <h1>The Best Fried Chicken and Waffles</h1>
+    <h3>Less important heading here</h3>
+    <p>Some additional information here</p>
+  </header>
+</body>
 </html>
