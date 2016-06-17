@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+{% if cart_items %}
+	{% for item in cart_items %}
+		<h1>{{item.name}}</h1>
+		<h1>{{item.total}}</h1>
+	{% endfor %}
+{% else %}
+	FUCK
+{% endif %}
+
+{%endblock%}

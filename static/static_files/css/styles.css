@@ -1,0 +1,27 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+body{
+	font-family: 'Raleway';
+}
+
+
+.menu-item {
+	padding: 10px;
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	background-color: #229922;
+	width: 350px;
+	text-align: center;
+}
+
+.navbar-custom li{
+	border-radius: 10px;
+}
+
+.navbar-custom li:hover ,
+.navbar-custom li:focus {
+    background: #2980b9;
+    color: #ecf0f1;
+}

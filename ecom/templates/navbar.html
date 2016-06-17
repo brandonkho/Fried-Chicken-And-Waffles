@@ -1,5 +1,5 @@
 <!-- Static navbar -->
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="navbar navbar-default navbar-custom navbar-static-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -12,8 +12,9 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Welcome</a></li>
+            <li><a href="#">Welcome</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="/catalog">Menu</a></li>
             <li><a href="#contact">Contact</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pull down <span class="caret"></span></a>
@@ -29,8 +30,8 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Default</a></li>
-            <li class="active"><a href="./">Static top</a></li>
+            <li><a href="/cart"><i class="glyphicon glyphicon-shopping-cart"></i>{% if not request.session.items_total %} Cart(0) {% else %} Cart({{ request.session.items_total }}) {% endif%}</a></li>
+            <li><a href="./">Derp</a></li>
             <li><a href="../navbar-fixed-top/">Fixed top</a></li>
           </ul>
         </div><!--/.nav-collapse -->

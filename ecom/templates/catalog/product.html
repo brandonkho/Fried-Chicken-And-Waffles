@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+		<div class='col-sm-3'>
+		{% for item in p.productimage_set.all %}
+
+		<img src="{{ MEDIA_URL }}{{ item.image }}" />
+		
+
+		{% endfor %}
+		{{ p.id }}
+		{{ p.title }}
+		{{ p.price }}
+
+
+
+		</div>
+
+
+<h1>{{ p.title }}</h1>
+
+
+<br /><br />
+	<form method="post" action="." class="cart">
+	{{ form.as_p }}
+	<br />
+	{% csrf_token %}
+	<input type="submit" value="Add To Cart" name="submit" alt="Add To Cart" />
+	</form>
+	<div class="cb"></div>
+<br /><br />
+<div class="cb"><br /><br /></div>
+<h3>Product Description</h3>
+{{ p.description }}
+{% endblock %}
